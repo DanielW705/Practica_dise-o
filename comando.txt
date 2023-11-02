@@ -1,0 +1,3 @@
+Para publicar la aplicacion en niginx es con el comando:
+
+sudo dotnet publish -o /var/www/app1
