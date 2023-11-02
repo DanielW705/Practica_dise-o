@@ -1,3 +1,10 @@
+#Ignora a si mismo
+.gitignore
+# Ignoramos los Txt
 *.txt
+# Ignoramos los binario
 bin
+# Ignoramos los objetos
 obj
+# Ignoramos las Propiedades
+Properties
