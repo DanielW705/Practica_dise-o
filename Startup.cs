@@ -16,12 +16,10 @@ namespace primera_pagina_web
         {
             services.AddControllersWithViews();
 
-            // services.AddDbContext<BB>(options =>
-            // {
-            //     options.UseMySQL(
-            //         Configuration.GetConnectionString("DataBase")
-            //         );
-            // });
+            services.AddDbContext<TiendaContext>(options =>
+            {
+                options.UseMySQL(Configuration.GetConnectionString("DataBase"));
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

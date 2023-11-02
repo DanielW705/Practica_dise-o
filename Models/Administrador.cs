@@ -1,21 +1,15 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using static primera_pagina_web.Enums.Enums;
+﻿using System;
+using System.Collections.Generic;
+
 namespace primera_pagina_web.Models;
 
-[Table("ADMINISTRADOR")]
-public class Administrador : Usuario_
+public partial class Administrador
 {
+    public int Id { get; set; }
 
-    public ROL rol { get; set; }
+    public string Usuario { get; set; } = null!;
 
+    public string Contrasena { get; set; } = null!;
 
-    public Administrador() : base()
-    {
-
-    }
-    public Administrador(string _usuario, string _contrasena, ROL _rol = ROL.read) : base(_usuario, _contrasena)
-    {
-        this.rol = _rol;
-    }
+    public ulong? Rol { get; set; }
 }

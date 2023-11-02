@@ -8,8 +8,8 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
-    private readonly BB _BB;
-    public HomeController(ILogger<HomeController> logger,BB bb)
+    private readonly TiendaContext _BB;
+    public HomeController(ILogger<HomeController> logger,TiendaContext bb)
     {
         _logger = logger;
         _BB = bb;
@@ -17,7 +17,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        List<Administrador> administradores = _BB.administradores.ToList();
+        List<Administrador> administradores = _BB.Administradors.ToList();
         return View(administradores);
     }
 
