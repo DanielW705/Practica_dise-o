@@ -6,10 +6,6 @@ namespace primera_pagina_web.Models;
 
 public partial class TiendaContext : DbContext
 {
-    public TiendaContext()
-    {
-    }
-
     public TiendaContext(DbContextOptions<TiendaContext> options)
         : base(options)
     {
@@ -34,6 +30,7 @@ public partial class TiendaContext : DbContext
     public virtual DbSet<Vendedor> Vendedors { get; set; }
 
     public virtual DbSet<Ventum> Venta { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Administrador>(entity =>
@@ -135,11 +132,11 @@ public partial class TiendaContext : DbContext
 
             entity.HasIndex(e => e.IdComprador, "FK_COMPRADOR");
 
+            entity.HasIndex(e => e.IdProductosEnviar, "FK_PRODUCTO_A_ENVIAR");
+
             entity.HasIndex(e => e.IdVendedor, "FK_VENDEDOR");
 
             entity.HasIndex(e => e.Id, "ID").IsUnique();
-
-            entity.HasIndex(e => e.IdProductosEnviar, "PEDIDOS");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Cantidad).HasColumnName("CANTIDAD");
@@ -190,11 +187,11 @@ public partial class TiendaContext : DbContext
 
             entity.ToTable("PRODUCTOS_A_ENVIAR");
 
-            entity.HasIndex(e => e.IdProductoAEnviar, "FK_PRODUCTO_A_ENVIAR");
-
             entity.HasIndex(e => e.IdProducto, "FK_PRODUCTO_ENVIAR");
 
             entity.HasIndex(e => e.Id, "ID").IsUnique();
+
+            entity.HasIndex(e => e.IdProductoAEnviar, "PRODUCTO_ENVIAR");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.IdProducto).HasColumnName("ID_PRODUCTO");
@@ -214,9 +211,9 @@ public partial class TiendaContext : DbContext
 
             entity.HasIndex(e => e.IdProducto, "FK_PRODUCTO_VENDER");
 
-            entity.HasIndex(e => e.IdVentas, "FK_VENTA_PRODUCTO");
-
             entity.HasIndex(e => e.Id, "ID").IsUnique();
+
+            entity.HasIndex(e => e.IdVentas, "VENTAS");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.IdProducto).HasColumnName("ID_PRODUCTO");
@@ -261,9 +258,9 @@ public partial class TiendaContext : DbContext
 
             entity.HasIndex(e => e.IdComprador, "FK_VENTAS");
 
-            entity.HasIndex(e => e.Id, "ID").IsUnique();
+            entity.HasIndex(e => e.IdProductos, "FK_VENTA_PRODUCTO");
 
-            entity.HasIndex(e => e.IdProductos, "PRODUCTOS");
+            entity.HasIndex(e => e.Id, "ID").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.IdComprador).HasColumnName("ID_COMPRADOR");
