@@ -177,6 +177,9 @@ public partial class TiendaContext : DbContext
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
                 .HasColumnName("NOMBRE");
+            entity.Property(e => e.Picture)
+                .HasColumnType("blob")
+                .HasColumnName("PICTURE");
             entity.Property(e => e.Precio).HasColumnName("PRECIO");
             entity.Property(e => e.Serie).HasColumnName("SERIE");
         });

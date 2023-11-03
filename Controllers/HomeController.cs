@@ -17,8 +17,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        List<Administrador> administradores = _BB.Administradors.ToList();
-        return View(administradores);
+        return View();
     }
 
     public IActionResult Privacy()

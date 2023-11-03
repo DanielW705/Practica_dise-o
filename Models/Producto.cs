@@ -19,6 +19,8 @@ public partial class Producto
 
     public string Modelo { get; set; } = null!;
 
+    public byte[] Picture { get; set; } = null!;
+
     public virtual ICollection<ProductosAEnviar> ProductosAEnviars { get; set; } = new List<ProductosAEnviar>();
 
     public virtual ICollection<ProductosAVender> ProductosAVenders { get; set; } = new List<ProductosAVender>();

@@ -1,6 +1,26 @@
-﻿@model List<Administrador>
-
-@foreach (Administrador administrador in Model)
-{
-    <p>@administrador.Usuario</p>
-}
+﻿<nav class="navbar">
+    <ul class="menu">
+        <li class="title">
+            <p>Happy home</p>
+        </li>
+        <li class="option-section">
+            <button class="option">Tienda</button>
+        </li>
+        <li class="icons-section">
+            <object data="~/icons/car.svg" type="image/svg+xml"> </object>
+            <object data="~/icons/log_in.svg" type="image/svg+xml"></object>
+        </li>
+    </ul>
+</nav>
+<article class="body">
+    <section class="slider">
+        <ul>
+            <li><img src="~/img/slide4.jpg" alt=""></li>
+            <li><img src="~/img/slide5.jpg" alt=""></li>
+            <li><img src="~/img/slide6.jpg" alt=""></li>
+        </ul>
+    </section>
+    <section class="data-body">
+        
+    </section>
+</article>
