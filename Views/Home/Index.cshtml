@@ -7,8 +7,14 @@
             <button class="option">Tienda</button>
         </li>
         <li class="icons-section">
-            <object data="~/icons/car.svg" type="image/svg+xml"> </object>
-            <object data="~/icons/log_in.svg" type="image/svg+xml"></object>
+            <button id="carr" class="btnIcon">
+                <object  data="~/icons/car.svg" type="image/svg+xml">
+                </object>
+            </button>
+            <button id="log_in" class="btnIcon">
+                <object  data="~/icons/log_in.svg" type="image/svg+xml">
+                </object>
+            </button>
         </li>
     </ul>
 </nav>
@@ -21,6 +27,13 @@
         </ul>
     </section>
     <section class="data-body">
-        
+
     </section>
 </article>
+
+<script type="text/javascript">
+    let url = '@Url.Action("Log_in", "Home")';
+</script>
+
+<script src="~/js/log_in.js" type="text/javascript">
+</script>

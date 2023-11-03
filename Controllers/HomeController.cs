@@ -9,7 +9,7 @@ public class HomeController : Controller
     private readonly ILogger<HomeController> _logger;
 
     private readonly TiendaContext _BB;
-    public HomeController(ILogger<HomeController> logger,TiendaContext bb)
+    public HomeController(ILogger<HomeController> logger, TiendaContext bb)
     {
         _logger = logger;
         _BB = bb;
@@ -30,4 +30,11 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+    [HttpGet]
+    public IActionResult Log_in()
+    {
+        return PartialView("_LogIn");
+    }
+
 }

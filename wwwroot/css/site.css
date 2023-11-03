@@ -5,6 +5,11 @@
   src: url("../fonts/PlaypenSans-VariableFont_wght.ttf");
   font-style: normal;
 }
+@font-face {
+  font-family: "Monserrat";
+  src: url("../fonts/Montserrat-Regular.ttf");
+  font-style: normal;
+}
 
 * {
   margin: 0;
@@ -64,10 +69,21 @@
   align-items: center;
 }
 
-.navbar .menu .icons-section object {
+.navbar .menu .icons-section .btnIcon {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1;
+  width: 10%;
+  height: 100%;
+}
+
+.navbar .menu .icons-section .btnIcon object {
   filter: invert(100%) sepia(1%) saturate(7465%) hue-rotate(264deg)
     brightness(104%) contrast(118%);
   height: 70%;
+  position: relative;
+  z-index: -1;
 }
 
 /* Estilo para el cuerpo */
@@ -133,4 +149,75 @@
   width: 100%;
   height: 100%;
   overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para el cuerpo del login */
+@keyframes elevacion {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+.body .data-body .cuerpo-logIn {
+  background-color: rgba(255, 255, 240, 0.8);
+  font-family: "Monserrat";
+  border-radius: 10px;
+  width: 30%;
+  height: 80%;
+  font-size: 70%;
+  display: grid;
+  grid-template-rows: 15% 85%;
+  grid-template-columns: 1fr;
+  position: relative;
+  animation: elevacion 5s;
+}
+.body .data-body .cuerpo-logIn .selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body .data-body .cuerpo-logIn .selection .options-area {
+  background-color: rgba(250, 128, 114, 0.1);
+  width: 90%;
+  height: 60%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+  font-size: 80%;
+  border-radius: 20px;
+}
+.body .data-body .cuerpo-logIn .selection .options-area .selector {
+  width: 50%;
+  height: 100%;
+  background: rgba(117, 117, 117, 0.5);
+  position: absolute;
+  z-index: 0;
+  border-radius: 20px;
+  right: 50%;
+}
+
+.body .data-body .cuerpo-logIn .selection .options-area .option {
+  list-style: none;
+  cursor: pointer;
+  z-index: 1;
+}
+.body .data-body .cuerpo-logIn .forms {
+  display: grid;
+  grid-template-columns: 100% 100%;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+}
+
+.body .data-body .cuerpo-logIn .forms form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10% 5% 32.5% 32.5% 20%;
 }
