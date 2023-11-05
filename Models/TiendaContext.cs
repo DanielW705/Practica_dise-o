@@ -42,13 +42,13 @@ public partial class TiendaContext : DbContext
             entity.HasIndex(e => e.Id, "ID").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("ID");
-            entity.Property(e => e.Contrasena)
+            entity.Property(e => e.contrasena)
                 .HasMaxLength(8)
                 .HasColumnName("CONTRASENA");
             entity.Property(e => e.Rol)
                 .HasColumnType("bit(3)")
                 .HasColumnName("ROL");
-            entity.Property(e => e.Usuario)
+            entity.Property(e => e._Usuario)
                 .HasMaxLength(30)
                 .HasColumnName("USUARIO");
         });
@@ -66,7 +66,7 @@ public partial class TiendaContext : DbContext
             entity.HasIndex(e => e.Id, "ID").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("ID");
-            entity.Property(e => e.Contrasena)
+            entity.Property(e => e.contrasena)
                 .HasMaxLength(8)
                 .HasColumnName("CONTRASENA");
             entity.Property(e => e.Correo)
@@ -80,7 +80,7 @@ public partial class TiendaContext : DbContext
             entity.Property(e => e.Nombre)
                 .HasMaxLength(15)
                 .HasColumnName("NOMBRE");
-            entity.Property(e => e.Usuario)
+            entity.Property(e => e._Usuario)
                 .HasMaxLength(30)
                 .HasColumnName("USUARIO");
 
@@ -237,7 +237,7 @@ public partial class TiendaContext : DbContext
             entity.HasIndex(e => e.Id, "ID").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("ID");
-            entity.Property(e => e.Contrasena)
+            entity.Property(e => e.contrasena)
                 .HasMaxLength(8)
                 .HasColumnName("CONTRASENA");
             entity.Property(e => e.Correo)
@@ -246,7 +246,7 @@ public partial class TiendaContext : DbContext
             entity.Property(e => e.Nombre)
                 .HasMaxLength(30)
                 .HasColumnName("NOMBRE");
-            entity.Property(e => e.Usuario)
+            entity.Property(e => e._Usuario)
                 .HasMaxLength(30)
                 .HasColumnName("USUARIO");
         });

@@ -37,4 +37,12 @@ public class HomeController : Controller
         return PartialView("_LogIn");
     }
 
+    [HttpGet]
+    public IActionResult LogIn(Usuario usuario_login)
+    {
+        if (!ModelState.IsValid)
+            return Json("Sin datos");
+        else
+            return Json("Salio bien");
+    }
 }

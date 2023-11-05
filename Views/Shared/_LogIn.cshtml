@@ -1,3 +1,4 @@
+@model Usuario
 <article class="cuerpo-logIn">
     <div class="selection">
         <ul class="options-area">
@@ -7,31 +8,41 @@
         </ul>
     </div>
     <div class="forms">
-        <form asp-controller="" asp-action="" class="LogInForm" method="get">
+        <form asp-controller="HomeController" asp-action="LogIn" class="LogIn Form" method="get">
             <h2>Ingresar</h2>
             <hr>
-            <div class="User-zone">
-                <span class="title">Usuario</span>
-                <input type="text">
+            <div class="zone">
+                <label class="title">Usuario</label>
+                <input class="caption" type="text">
+                <span class="validation" asp-validation-for="_Usuario"></span>
             </div>
-            <div class="password-zone">
-                <span class="title">Contraseña</span>
-                <input type="password">
+            <div class="zone">
+                <label class="title">Contraseña</label>
+                <input class="caption" type="password">
+                <span class="validation" asp-validation-for="contrasena"></span>
             </div>
-            <button class="btn-submit">Ingresar</button>
+            <button type="submit" class="btn-submit">Ingresar</button>
         </form>
-        <form asp-controller="" asp-action="" class="RegisterForm" method="post">
+        <form asp-controller="" asp-action="" class="Register Form" method="post">
             <h2>Registrarse</h2>
-            <br>
-            <div class="User-zone">
-                <span class="title">Usuario</span>
-                <input type="text">
+            <hr>
+            <div class="User zone">
+                <label class="title">Usuario</label>
+                <input class="caption" type="text">
+                <span class="validation" asp-validation-for="_Usuario"></span>
             </div>
-            <div class="password-zone">
-                <span class="title">Contraseña</span>
-                <input type="password">
+            <div class="password zone">
+                <label class="title">Contraseña</label>
+                <input class="caption" type="password">
+                <span class="validation" asp-validation-for="contrasena"></span>
             </div>
-            <button class="btn-submit">Registrarse</button>
+            <div class="type zone">
+                <select class="select" name="" id="">
+                    <option value="">Comprador</option>
+                    <option value="">Vendedor</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-submit">Registrarse</button>
         </form>
     </div>
 </article>
