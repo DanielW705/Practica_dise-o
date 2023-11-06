@@ -8,22 +8,22 @@
         </ul>
     </div>
     <div class="forms">
-        <form asp-controller="HomeController" asp-action="LogIn" class="LogIn Form" method="get">
+        <form class="LogIn Form">
             <h2>Ingresar</h2>
             <hr>
             <div class="zone">
                 <label class="title">Usuario</label>
-                <input class="caption" type="text">
+                <input class="caption" type="text" asp-for="_Usuario" value="" name="_Usuario">
                 <span class="validation" asp-validation-for="_Usuario"></span>
             </div>
             <div class="zone">
                 <label class="title">Contraseña</label>
-                <input class="caption" type="password">
+                <input class="caption" type="password" asp-for="contrasena" value="" name="contrasena">
                 <span class="validation" asp-validation-for="contrasena"></span>
             </div>
-            <button type="submit" class="btn-submit">Ingresar</button>
+            <button class="btn-submit">Ingresar</button>
         </form>
-        <form asp-controller="" asp-action="" class="Register Form" method="post">
+        <form class="Register Form">
             <h2>Registrarse</h2>
             <hr>
             <div class="User zone">
@@ -42,7 +42,7 @@
                     <option value="">Vendedor</option>
                 </select>
             </div>
-            <button type="submit" class="btn-submit">Registrarse</button>
+            <button class="btn-submit">Registrarse</button>
         </form>
     </div>
 </article>

@@ -31,14 +31,14 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    [HttpGet]
+    [HttpPost]
     public IActionResult Log_in()
     {
         return PartialView("_LogIn");
     }
 
     [HttpGet]
-    public IActionResult LogIn(Usuario usuario_login)
+    public IActionResult Acces(Usuario usuario_login)
     {
         if (!ModelState.IsValid)
             return Json("Sin datos");
